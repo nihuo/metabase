@@ -198,7 +198,7 @@
   "Formats timestamps with human friendly absolute dates based on the column :unit"
   [timezone timestamp col]
   (case (:unit col)
-    :hour          (reformat-timestamp timezone timestamp "h %a - d MMM YYYY")
+    :hour          (reformat-timestamp timezone timestamp "h a - d MMM YYYY")
     :week          (str "Week " (reformat-timestamp timezone timestamp "w - YYYY"))
     :month         (reformat-timestamp timezone timestamp "MMMM YYYY")
     :quarter       (let [timestamp-obj (du/str->date-time timestamp timezone)]
